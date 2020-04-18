@@ -56,7 +56,7 @@ RUN apt-get install -y \
 RUN a2dissite 000-default.conf
 RUN rm -r $APP_HOME
 
-  # change uid and gid of apache to docker user uid/gid
+ # change uid and gid of apache to docker user uid/gid
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 RUN chown -R www-data:www-data $APP_HOME
 
